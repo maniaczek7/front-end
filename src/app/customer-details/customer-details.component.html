@@ -1,0 +1,20 @@
+<div *ngIf="customer" [class.inactive]="customer.active">
+  <div>
+    <label>Name: </label> {{customer.name}}
+  </div>
+  <div>
+    <label>Age: </label> {{customer.age}}
+  </div>
+  <div>
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+      <label>Active: </label>
+      <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" (click)='updateActive(!customer.active)' [checked]="customer.active">
+    </label>
+  </div>
+
+  <button class="mdl-button mdl-js-button mdl-button--accent" (click)='deleteCustomer()' [disabled]="customer.active">
+    Delete
+  </button>
+
+  <hr/>
+</div>

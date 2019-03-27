@@ -1,0 +1,25 @@
+<div style="padding: 20px;">
+  <h1 style="color: black">{{title}}</h1>
+  <h3>{{description}}</h3>
+  <nav>
+    <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        Customer
+      </button>
+    </a>
+
+    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        Add
+      </button>
+    </a>
+
+    <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        Search
+      </button>
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
