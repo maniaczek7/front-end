@@ -17,7 +17,6 @@ export class SearchCustomersComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-    this.age = 0;
   }
 
   private searchCustomers() {

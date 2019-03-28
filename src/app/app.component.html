@@ -3,23 +3,22 @@
   <h3>{{description}}</h3>
   <nav>
     <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-        Customer
+      <button mat-raised-button color="primary">
+        CUSTOMER
       </button>
     </a>
 
     <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-        Add
+      <button mat-raised-button color="primary">
+        ADD
       </button>
     </a>
 
     <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-        Search
+      <button mat-raised-button color="primary">
+        SEARCH
       </button>
     </a>
   </nav>
-
   <router-outlet></router-outlet>
 </div>

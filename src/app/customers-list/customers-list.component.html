@@ -1,9 +1,9 @@
 <h3>Customers</h3>
 <div *ngFor="let customer of customers | async" style="width: 300px;">
   <customer-details [customer]='customer'></customer-details>
-</div>
+</div><p></p>
 <div>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)='reloadData()'>Reload</button>
-  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)='deleteCustomers()'>Delete All</button>
+  <button mat-raised-button color="accent" (click)='reloadData()'>RELOAD</button>
+  <button mat-raised-button color="accent" (click)='deleteCustomers()'>DELETE ALL</button>
 </div>
 

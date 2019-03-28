@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
@@ -22,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [CustomersListComponent,SearchCustomersComponent],
   bootstrap: [AppComponent]
