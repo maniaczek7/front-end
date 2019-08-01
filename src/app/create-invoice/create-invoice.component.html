@@ -1,0 +1,20 @@
+<p></p>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <input matInput placeholder="Name" id="name" required [(ngModel)]="invoice.name" name="name" pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">
+      <mat-error>Please type in proper name and use letters only!</mat-error>
+    </mat-form-field><p></p>
+
+    <div class="btn-group">
+      <button mat-raised-button color="accent">SUBMIT</button>
+    </div>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>New invoice created successfully!</h4>
+  <button class="btn btn-success mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="newInvoice()">Add next</button>
+</div>

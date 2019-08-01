@@ -1,0 +1,14 @@
+<div class="list">
+  <p></p>
+
+  <div *ngFor="let invoice of invoices | async" style="width: 300px;">
+    <invoice-details [invoice]='invoice'></invoice-details>
+  </div>
+
+  <p></p>
+</div>
+<div>
+  <button mat-raised-button color="accent" (click)='reloadData()'>RELOAD</button>
+  <button mat-raised-button color="accent" (click)='deleteInvoices()'>DELETE ALL</button>
+</div>
+

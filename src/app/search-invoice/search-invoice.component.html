@@ -1,0 +1,19 @@
+<p></p>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <input matInput placeholder="Name Like" id="name" required [(ngModel)]="name" name="name" pattern="-?[0-9]*(\.[0-9]+)?">
+      <mat-error>Please put a name!</mat-error>
+    </mat-form-field><p></p>
+
+    <div class="btn-group">
+      <button mat-raised-button color="accent">SUBMIT</button>
+    </div>
+
+  </form>
+</div>
+<br>
+<div *ngFor="let invoice of invoices" style="width: 300px;">
+  <invoice-details [invoice]='invoice'></invoice-details>
+</div>

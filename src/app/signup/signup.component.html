@@ -1,0 +1,33 @@
+<div>
+  <form (ngSubmit)="trySignup()">
+
+    <mat-form-field>
+      <input matInput placeholder="Firstname" id="firstname" required [(ngModel)]="account.firstname" name="firstname" pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">
+      <mat-error>Please type in proper username and use letters only!</mat-error>
+    </mat-form-field><p></p>
+
+    <mat-form-field>
+      <input matInput placeholder="Lastname" id="lastname" required [(ngModel)]="account.lastname" name="surname" pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">
+      <mat-error>Please type in proper username and use letters only!</mat-error>
+    </mat-form-field><p></p>
+
+    <mat-form-field>
+      <input matInput placeholder="Username" id="username" required [(ngModel)]="account.username" name="username" pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">
+      <mat-error>Please type in proper username and use letters only!</mat-error>
+    </mat-form-field><p></p>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" id="password" required [(ngModel)]="account.password" name="password">
+      <!--<mat-error>Please put a number!</mat-error>-->
+    </mat-form-field><p></p>
+
+
+    <div class="btn-group">
+      <button  mat-raised-button color="accent">SIGNUP</button>
+    </div>
+
+  </form>
+  <p></p>
+  <!--<a href="/ui/signup">Sign up!</a>-->
+
+</div>
