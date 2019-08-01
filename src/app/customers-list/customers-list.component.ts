@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer';
+import { CreateCustomerComponent } from '../create-customer/create-customer.component';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'customers-list',
@@ -23,7 +25,6 @@ export class CustomersListComponent implements OnInit {
     this.customerService.deleteAll()
       .subscribe(
         data => {
-          console.log(data);
           this.reloadData();
         },
         error => console.log('ERROR: ' + error));

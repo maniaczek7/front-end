@@ -11,7 +11,9 @@
         <mat-checkbox (click)='updateActive(!customer.active)' [checked]="customer.active"></mat-checkbox>
     </label>
   </div>
-
+  <div>
+    <label>Invoice: </label> {{customer.invoice.name}}
+  </div>
   <button mat-button color="accent" (click)='deleteCustomer()' [disabled]="customer.active">
     DELETE
   </button>

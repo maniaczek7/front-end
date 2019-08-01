@@ -1,4 +1,4 @@
-<h3>Create Customer</h3>
+<p></p>
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
 
@@ -10,6 +10,20 @@
     <mat-form-field>
       <input matInput placeholder="Age" id="age" required [(ngModel)]="customer.age" name="age" pattern="-?[0-9]*(\.[0-9]+)?">
       <mat-error>Please put a number!</mat-error>
+    </mat-form-field><p></p>
+
+    <!--<mat-form-field>-->
+      <!--<input matInput placeholder="Name of new invoice" id="invoice" required [(ngModel)]="invoice.name" name="name" pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">-->
+      <!--<mat-error>Please type in proper name and use letters only!</mat-error>-->
+    <!--</mat-form-field><p></p>-->
+
+    <mat-form-field>
+      <mat-label>Select invoice</mat-label>
+      <mat-select id="invoice" name="invoice" [(ngModel)]="invoice">
+        <mat-option *ngFor="let invoice of invoices | async" [value]="invoice">
+          {{invoice.name}}
+        </mat-option>
+      </mat-select>
     </mat-form-field><p></p>
 
     <div class="btn-group">

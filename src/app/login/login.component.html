@@ -1,0 +1,22 @@
+<div>
+  <form (ngSubmit)="tryLogin()">
+
+    <mat-form-field>
+      <input matInput placeholder="Username" id="username" required [(ngModel)]="login.username" name="username"  pattern="^[a-zA-Z_-]+(?:\s+[a-zA-Z_-]+)*$">
+      <mat-error>Please type in proper username and use letters only!</mat-error>
+    </mat-form-field><p></p>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" id="password" required [(ngModel)]="login.password" name="password">
+      <!--<mat-error>Please put a number!</mat-error>-->
+    </mat-form-field><p></p>
+
+    <div class="btn-group">
+      <button  mat-raised-button color="accent">LOGIN</button>
+    </div>
+
+  </form>
+  <p></p>
+  <!--<a href="/ui/signup">Sign up!</a>-->
+
+</div>

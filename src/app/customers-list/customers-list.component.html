@@ -1,7 +1,12 @@
-<h3>Customers</h3>
-<div *ngFor="let customer of customers | async" style="width: 300px;">
-  <customer-details [customer]='customer'></customer-details>
-</div><p></p>
+<div class="list">
+  <p></p>
+
+  <div *ngFor="let customer of customers | async" style="width: 300px;">
+    <customer-details [customer]='customer'></customer-details>
+  </div>
+
+  <p></p>
+</div>
 <div>
   <button mat-raised-button color="accent" (click)='reloadData()'>RELOAD</button>
   <button mat-raised-button color="accent" (click)='deleteCustomers()'>DELETE ALL</button>

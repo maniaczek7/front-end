@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  private baseUrl = 'http://3.95.187.34:8080/api/customers';
+  private baseUrl = 'http://rmichniewski.eu/api/customers';
 
   constructor(private http: HttpClient) { }
 

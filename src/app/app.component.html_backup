@@ -1,0 +1,24 @@
+<div style="padding: 20px;">
+  <h1 style="color: black">{{title}}</h1>
+  <h3>{{description}}</h3>
+  <nav>
+    <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button mat-raised-button color="primary">
+        CUSTOMER
+      </button>
+    </a>
+
+    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button mat-raised-button color="primary">
+        ADD
+      </button>
+    </a>
+
+    <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">
+      <button mat-raised-button color="primary">
+        SEARCH
+      </button>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

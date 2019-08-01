@@ -1,24 +1,127 @@
-<div style="padding: 20px;">
-  <h1 style="color: black">{{title}}</h1>
-  <h3>{{description}}</h3>
-  <nav>
-    <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button mat-raised-button color="primary">
-        CUSTOMER
-      </button>
-    </a>
+<div *ngIf="currentUser != null">
+  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">{{title}}</h1>
+      <div class="right" id="contact_icons">
+        <contact-menu></contact-menu>
 
-    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button mat-raised-button color="primary">
-        ADD
-      </button>
-    </a>
+      </div>
+    </mat-toolbar>
 
-    <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">
-      <button mat-raised-button color="primary">
-        SEARCH
-      </button>
-    </a>
-  </nav>
-  <router-outlet></router-outlet>
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <p></p>
+          <p align="center">
+            <i mat-list-item class="material-icons">
+              fingerprint
+            </i>
+            <a mat-list-item
+               routerLink="ui/customer"
+               class="btn btn-primary active"
+               role="button"
+               routerLinkActive="active"
+               (click)="mobileQuery.matches ? snav.toggle() : false">
+              <!--<button mat-button color="primary">-->
+                CUSTOMERS
+              <!--</button>-->
+            </a>
+            <!--<a mat-list-item routerLink="#/add"-->
+               <!--class="btn btn-primary active"-->
+               <!--role="button"-->
+               <!--routerLinkActive="active"-->
+               <!--(click)="mobileQuery.matches ? snav.toggle() : false">-->
+              <!--&lt;!&ndash;<button mat-button color="primary">&ndash;&gt;-->
+                <!--ADD-->
+              <!--&lt;!&ndash;</button>&ndash;&gt;-->
+            <!--</a>-->
+            <!--<a mat-list-item-->
+               <!--routerLink="findbyage"-->
+               <!--class="btn btn-primary active"-->
+               <!--role="button"-->
+               <!--routerLinkActive="active"-->
+               <!--(click)="mobileQuery.matches ? snav.toggle() : false">-->
+              <!--&lt;!&ndash;<button mat-button color="primary">&ndash;&gt;-->
+                <!--SEARCH-->
+              <!--&lt;!&ndash;</button>&ndash;&gt;-->
+            <!--</a>-->
+            <a mat-list-item
+               routerLink="ui/invoice"
+               class="btn btn-primary active"
+               role="button"
+               routerLinkActive="active"
+               (click)="mobileQuery.matches ? snav.toggle() : false">
+              <!--<button mat-button color="primary">-->
+                INVOICES
+              <!--</button>-->
+            </a>
+            <a mat-list-item
+               routerLink="ui/supplier"
+               class="btn btn-primary active"
+               role="button"
+               routerLinkActive="active"
+               (click)="mobileQuery.matches ? snav.toggle() : false">
+              <!--<button mat-button color="primary">-->
+                SUPPLIERS
+              <!--</button>-->
+            </a>
+            <a mat-list-item
+               routerLink="ui/polaroid"
+               class="btn btn-primary active"
+               role="button"
+               routerLinkActive="active"
+               (click)="mobileQuery.matches ? snav.toggle() : false">
+              <!--<button mat-button color="primary">-->
+                POLAROID
+              <!--</button>-->
+            </a>
+            <a mat-list-item
+               routerLink="ui/login"
+               class="btn btn-primary active"
+               role="button"
+               routerLinkActive="active"
+               (click)="removeToken()">
+               <!--[routerLink]="['/login']"-->
+              <!--<button mat-button color="primary">-->
+                LOG OUT
+              <!--</button>-->
+            </a>
+          </p>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
+<div *ngIf="currentUser == null && !signup">
+  <div align="right">
+    <a class="btn btn-primary active"
+     role="button"
+     routerLinkActive="active"
+     (click)="setSignup()">
+    <!--[routerLink]="['/login']"-->
+    <!--<button mat-button color="primary">-->
+    Sign up!
+    <!--</button>-->
+  </a></div>
+  <app-login></app-login>
+</div>
+<div *ngIf="currentUser == null && signup">
+  <div align="right">
+    <a class="btn btn-primary active"
+       role="button"
+       routerLinkActive="active"
+       (click)="setSignup()">
+      <!--[routerLink]="['/login']"-->
+      <!--<button mat-button color="primary">-->
+      Login!
+      <!--</button>-->
+    </a></div>
+  <app-signup></app-signup>
 </div>

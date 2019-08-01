@@ -3,4 +3,5 @@ export class Customer {
     name: string;
     age: number;
     active: boolean;
+    invoice: Object;
 }

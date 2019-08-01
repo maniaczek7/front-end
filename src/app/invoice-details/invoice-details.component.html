@@ -1,0 +1,9 @@
+<div *ngIf="invoice">
+  <div>
+    <label>Name: </label> {{invoice.name}}
+  </div>
+  <button mat-button color="accent" (click)='deleteInvoice()'>
+    DELETE
+  </button>
+  <hr/>
+</div>
