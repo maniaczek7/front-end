@@ -1,5 +1,4 @@
 FROM node:8.11.3 as builder
-#COPY --chown=node:node . /home/node/src
 WORKDIR /app
 COPY --chown=node:node . /app
 RUN npm install
